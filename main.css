@@ -1,0 +1,175 @@
+:root {
+  --primary: #ea40a4;
+  --business: #3a82ee;
+  --personal: var(--primary);
+
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+  --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+body {
+  margin: 0px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #eee;
+  font-family: sans-serif;
+}
+.app {
+  margin: 10px auto;
+  max-width: 900px;
+}
+input[type="text"] {
+  all: unset;
+  background: transparent;
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+  font-size: large;
+}
+h3{
+  font-size: large;
+  font-weight: 500;
+}
+h4{
+  color: gray;
+  font-weight: 600;
+}
+.create-todo input[type="text"]{
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 15%);
+  background: white;
+}
+.error input[type="text"]::placeholder{
+  color: crimson;
+}
+#name {
+  font-size: unset;
+  background: transparent;
+}
+.options {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.labels {
+  border-radius: 15px;
+  padding: 10px 100px;
+  text-align: center;
+  background: white;
+  font-size: large;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 15%);
+}
+.labels:hover{
+  cursor: pointer;
+}
+input[type="submit"]{
+  background: linear-gradient(90deg, red, blue);
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  font-size: larger;
+  font-weight: 700;
+}
+input[type="submit"]:hover{
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 15%);
+  border-radius: 15px;
+}
+input[type="submit"]:active{
+  opacity: 0.7;
+}
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+button:active {
+  opacity: 0.5;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+.bubble {
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  border: 2px solid var(--business);
+  border-radius: 50%;
+  box-shadow: var(--business-glow);
+}
+.personal {
+  border: 2px solid var(--personal);
+  box-shadow: var(--personal-glow);
+}
+input + span::before {
+  content: "";
+  display: block;
+  opacity: 0;
+  height: 10px;
+  width: 10px;
+  background-color: var(--business);
+  box-shadow: var(--business-glow);
+  border-radius: 50%;
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+input + .personal::before {
+  background-color: var(--personal);
+  box-shadow: var(--personal-glow);
+}
+input:checked + span::before {
+  opacity: 1;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 15%);
+  margin: 15px 0px;
+}
+.todo-content {
+  flex: 1;
+}
+.editing{
+  color: rgb(126, 226, 33);
+}
+.completed{
+  text-decoration: line-through;
+  color: gray;
+}
+button {
+  padding: 10px;
+  border: unset;
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: 500;
+  margin: auto 5px;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 15%);
+  color: white;
+}
+
+.delete{
+  background:#ff5b57;
+}
+.edit {
+  background: linear-gradient(90deg, pink, purple,#ac9bed);
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+.todo-item label:hover{
+  cursor: pointer;
+}
